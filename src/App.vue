@@ -2,7 +2,7 @@
 import axios from 'axios'
 import { ref } from 'vue'
 import Swal from 'sweetalert2'
-
+ const isLoading = ref(false)
 const form = ref({
   title: '',
   message: ''
@@ -24,6 +24,7 @@ const url = 'https://discord.com/api/webhooks/1430744698783535214/6mw1krucWcA-1P
 
 const submit = async () => {
   if (!validateForm()) return
+  isLoading.value = true
 
   // ✅ Discord requires a 'content' field
   const payLoad = {
@@ -53,6 +54,8 @@ const submit = async () => {
       text: 'Failed to send feedback.'
     })
     console.error('Discord Error:', error)
+  }finally {
+    isLoading.value = false
   }
 }
 </script>
@@ -90,7 +93,7 @@ const submit = async () => {
               </div>
 
               <button type="submit" class="btn btn-primary w-100">
-                Submit Feedback
+                {{ isLoading ? 'Sending...' : 'Submit Feedback' }}
               </button>
             </form>
           </div>
