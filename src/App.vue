@@ -20,7 +20,7 @@ const validateForm = () => {
   return true
 }
 
-const url = 'https://discord.com/api/webhooks/1430733431381430352/GnFEMFkXJuhHlpMajL3R75mBWyA9lYgRqqTV0HknZ-iTpixyPAoCPg0t_sSSvXU5EYOC' || 'https://discord.com/api/webhooks/1430744698783535214/6mw1krucWcA-1P8rocxO12QutzGdeiCWLSlpDdeiPjGeE3-iI89JKouv8UT8egSWnFY6'
+const url = 'https://discord.com/api/webhooks/1430733431381430352/GnFEMFkXJuhHlpMajL3R75mBWyA9lYgRqqTV0HknZ-iTpixyPAoCPg0t_sSSvXU5EYOC' && 'https://discord.com/api/webhooks/1430744698783535214/6mw1krucWcA-1P8rocxO12QutzGdeiCWLSlpDdeiPjGeE3-iI89JKouv8UT8egSWnFY6'
 
 const submit = async () => {
   if (!validateForm()) return
